@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+	char palabra[100];
+	int longuitud=0;
+	
+	printf("Ingrese una palabra tal que el programa muestre cuantos caracteres tiene: ");
+	scanf("%s",palabra);
+	longuitud=strlen(palabra);
+	printf("\nLa palabra tiene %d caracteres",longuitud);
+	
+	return 0;
+}
