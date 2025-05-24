@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	char palabra[100];
+	char destino[100];
+	printf("ingresa una cadena tal que el programa lo copie en un destino:");
+	fgets(palabra,sizeof(palabra),stdin);
+	strcpy(destino,palabra);
+	printf("\nel destino: %s",destino);
+	
+	
+	return 0;
+}
+
