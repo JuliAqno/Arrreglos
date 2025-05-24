@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+/*Escribí un programa que lea una frase y cuente cuántas vocales tiene.*/
+int main() {
+	int size,cont;
+	char palabra1[200];
+	printf("Ingrese la Frase\n");
+	scanf("%s", &palabra1);
+	size= strlen(palabra1);
+	cont=0;
+	for(int i=0;i<size;i++){
+		if(palabra1[i]=='a' || palabra1[i]=='e' ||  palabra1[i]=='i' ||  palabra1[i]=='o' ||  palabra1[i]=='u'){
+			cont++;
+		}
+	}
+	printf("La cantidad de bocales en la frase %s es: %d",palabra1,cont);
+	return 0;
+}
