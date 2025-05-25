@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+	int arreglo[] = {1, 2, 4, 4, 4, 5, 6};
+	int n = sizeof(arreglo) / sizeof(arreglo[0]);
+	int buscado;
+	int inicio, fin, medio;
+	int primera = -1, ultima = -1;
+	
+	printf("Ingrese el numero que desea buscar:\n");
+	scanf("%d", &buscado);
+	
+	// Buscar primera aparición
+	inicio = 0;
+	fin = n - 1;
+	while (inicio <= fin) {
+		medio = (inicio + fin) / 2;
+		if (arreglo[medio] == buscado) {
+			primera = medio;
+			fin = medio - 1;  // buscar más a la izquierda
+		} else if (buscado < arreglo[medio]) {
+			fin = medio - 1;
+		} else {
+			inicio = medio + 1;
+		}
+	}
+	
+	// Buscar última aparición
+	inicio = 0;
+	fin = n - 1;
+	while (inicio <= fin) {
+		medio = (inicio + fin) / 2;
+		if (arreglo[medio] == buscado) {
+			ultima = medio;
+			inicio = medio + 1;  // buscar más a la derecha
+		} else if (buscado < arreglo[medio]) {
+			fin = medio - 1;
+		} else {
+			inicio = medio + 1;
+		}
+	}
+	
+	// Mostrar resultado
+	if (primera == -1) {
+		printf("El numero %d NO aparece en el arreglo\n", buscado);
+	} else {
+		int cantidad = (ultima - primera) + 1;
+		if (cantidad > 1) {
+			printf("El numero %d aparece %d veces en el arreglo.\n", buscado, cantidad);
+		} else {
+			printf("El numero %d aparece en el arreglo pero no se repite.\n", buscado);
+		}
+	}
+	
+	return 0;
+}
