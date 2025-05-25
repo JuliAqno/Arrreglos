@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+/*Escribí un programa que reciba una oración por teclado y cuente cuántas palabras contiene.*/
+int main() {
+	int cont,size;
+	char palabra1[200];
+	printf("Ingrese una oracion y el programa devolvcrá cuantas frases tiene\n");
+	fgets(palabra1, sizeof(palabra1), stdin);
+	cont=1;
+	size= strlen(palabra1);
+	for (int i = 0;i<size; i++) {
+		if (palabra1[i] == ' ') {
+			cont++;
+		}
+	}
+	printf("La oracion tiene %d frases",cont);
+	return 0;
+}
