@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+/*Pedí al usuario una frase con espacios y mostrá esa frase sin espacios.*/
+int main() {
+	int size,j;
+	char palabra1[200];
+	char palabra2[200];
+	printf("Ingrese una oracion con espacios entre las frases y esta se mostrará sin espacios\n");
+	fgets(palabra1, sizeof(palabra1), stdin); //// Lee toda la línea, incluyendo espacios
+	size= strlen(palabra1);
+	j=0;
+	for (int i = 0;i<size; i++) {
+		if (palabra1[i] != ' ') {
+			palabra2[j]=palabra1[i];
+			j++;
+		}
+	}
+	palabra2[j] = '\0';  // Termina la cadena correctamente
+	printf("La frase será %s",palabra2);
+	return 0;
+}
