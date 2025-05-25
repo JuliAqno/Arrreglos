@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+	int arr[10];
+	int buscar,inicio=0,fin=10-1,medio;
+	int encontrado=0;
+	printf("ingrese 10 numeros de forma ascendente y luego un numero a buscar: ");
+	for(int i=0;i<10;i++){
+		scanf("%d",&arr[i]);
+	}
+	for(int i=0;i<3;i++){
+	printf("\nEl numero a buscar: ");
+	scanf("%d",&buscar);
+	inicio=0;
+	fin=9;
+	encontrado=0;
+	while(inicio<=fin){
+	medio=(inicio+fin)/2;
+	if(arr[medio]==buscar){
+		printf("\nNumero encontrado en la posicion %d",medio);
+		encontrado=1;
+		break;
+	}else{
+		if(buscar<arr[medio]){
+			fin=medio-1;
+		}else{
+			inicio=medio+1;
+		}
+	}	
+}
+if(!encontrado){
+	printf("\nEl numero no se encuentra en el arreglo");
+}
+}
+return 0;
+}
+	
