@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+/*Escribí un programa que reciba una oración por teclado y cuente cuántas palabras contiene.*/
+int main() {
+	int size,j;
+	char palabra1[200];
+	char palabra2[200];
+	printf("Ingrese una frase y esta se mostrará invertida\n");
+	fgets(palabra1, sizeof(palabra1), stdin); //// Lee toda la línea, incluyendo espacios
+	size= strlen(palabra1);
+	j=0;
+	for (int i = size-1;i>=0; i--) {
+			palabra2[j]=palabra1[i];
+			j++;
+	}
+	palabra2[j] = '\0';  // Termina la cadena correctamente
+	printf("La frase invertida será %s",palabra2);
+	return 0;
+}
