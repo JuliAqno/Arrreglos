@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <string.h>
+
+#define SIZE 10
+
+// Función para realizar la búsqueda binaria
+int busqueda_binaria(char *arr[], int size, char *clave) {
+	int inicio = 0;
+	int fin = size - 1;
+	
+	while (inicio <= fin) {
+		int medio = (inicio + fin) / 2;
+		int cmp = strcmp(clave, arr[medio]);
+		
+		if (cmp == 0) {
+			return medio; // La palabra fue encontrada
+		} else if (cmp < 0) {
+			fin = medio - 1;
+		} else {
+			inicio = medio + 1;
+		}
+	}
+	
+	return -1; // La palabra no fue encontrada
+}
+
+int main() {
+	// Arreglo ordenado alfabéticamente
+	char *palabras[SIZE] = {
+		"avion", "barco", "cielo", "dado", "elefante",
+			"fuego", "gato", "hielo", "isla", "jardin"
+	};
+	
+	char entrada[50];
+	printf("Ingrese una palabra: ");
+	scanf("%s", entrada);
+	
+	int resultado = busqueda_binaria(palabras, SIZE, entrada);
+	
+	if (resultado != -1) {
+		printf("La palabra '%s' se encuentra en la posición %d del arreglo.\n", entrada, resultado);
+	} else {
+		printf("La palabra '%s' NO se encuentra en el arreglo.\n", entrada);
+	}
+	
+	return 0;
+}
+/*?? ¿Cómo funciona?
+1. Arreglo ordenado
+c
+Copiar
+Editar
+char *palabras[SIZE] = {...};
+Creamos un arreglo de 10 punteros a strings ordenados alfabéticamente.
+
+2. Ingreso del usuario
+c
+Copiar
+Editar
+scanf("%s", entrada);
+Le pedimos al usuario que ingrese una palabra que queremos buscar.
+
+3. Búsqueda binaria
+La función busqueda_binaria compara la palabra ingresada con el elemento del medio del arreglo:
+
+Si son iguales, se devuelve el índice.
+
+Si la palabra es menor alfabéticamente, se busca en la mitad izquierda.
+
+Si es mayor, se busca en la mitad derecha.
+
+Usamos strcmp() para comparar strings:
+
+c
+Copiar
+Editar
+int cmp = strcmp(clave, arr[medio]);
+4. Resultado
+Se imprime si la palabra fue encontrada y en qué posición.
+
+*/
