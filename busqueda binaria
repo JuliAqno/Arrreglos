@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+	int arr[]={2,4,6,8,10,12};
+	int n=sizeof(arr)/sizeof(arr[0]);
+	int buscar,inicio=0,fin=n-1,medio;
+	int encontrado=0;
+	printf("Arreglo original: ");
+	for(int i=0;i<n;i++){
+		printf("%d ",arr[i]);
+	}
+	printf("\ningrese un numero para buscarlo en el arreglo por medio de busqueda binaria: ");
+	scanf("%d",&buscar);
+	while(inicio<=fin){
+		medio=(inicio+fin)/2;
+		if(arr[medio]==buscar){
+			printf("\nnumero encontrado en la posicion %d",medio);
+			encontrado=1;
+			break;
+		}else{
+			if(buscar<arr[medio]){
+				fin=medio-1;
+			}else{
+				inicio=medio+1;
+			}
+		}
+		
+	}
+	if(!encontrado){
+		printf("\nel numero no se encuentra en el arreglo");
+	}
+	
+	return 0;
+}
