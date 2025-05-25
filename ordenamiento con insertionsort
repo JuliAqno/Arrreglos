@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+	srand(time(NULL));//semilla de tiempo 
+	int arr[10];
+	int temp,j;
+	printf("arreglo con numeros aleatorios: ");
+	for( int i=0;i<10;i++){
+		arr[i]=rand()%101;//numero aleatorio entre 0 y 100
+		printf("%d ",arr[i]);
+	}
+	for(int i=0;i<10;i++){
+		temp=arr[i];
+		j=i-1;
+		while(j>=0 && arr[j]>temp){
+			arr[j+1]=arr[j];
+			j--;
+		}
+		arr[j+1]=temp;
+	}
+	printf("\narreglo ordenado: ");
+		
+	for(int i=0;i<10;i++){
+		printf("%d ",arr[i]);
+		
+	}
+	return 0;
+}
