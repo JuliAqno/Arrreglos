@@ -1,0 +1,18 @@
+#include <stdio.h>
+int esPar(int a){
+	return a%2;
+}
+int main(){
+	int numero;
+	printf("ingrese un numero tal que la funcion devuelva 1 si es par o 0 si es impar: ");
+	scanf("%d",&numero);
+	int resultado=esPar(numero);
+	if(esPar(numero)==0){
+		printf("\n1");
+	}else{
+		printf("\n0");
+	}
+	
+	
+	return 0;
+}
