@@ -1,0 +1,14 @@
+#include <stdio.h>
+int areaTruangulo(float a,float b){
+	return (a*b)/2;
+}
+int main(){
+	float base,altura;
+	printf("\nIngrese la base:");
+	scanf("%f",&base);
+	printf("\nIngrese la altura:");
+	scanf("%f",&altura);
+	float resultado=areaTruangulo(base,altura);
+	printf("\nel area del triangulo es:%f",resultado);
+	return 0;
+}
