@@ -1,0 +1,20 @@
+#include <stdio.h>
+int potencia(int a,int b){
+	int resultado=1;
+	for(int i=0;i<b;i++){
+		resultado*=a;
+		
+	}
+	return resultado;
+	
+}
+
+int main(){
+	int base,exponente;
+	printf("ingrese la base y el exponente tal que la funcion devuelva su potencia:");
+	scanf("%d",&base);
+	scanf("%d",&exponente);
+	int resultado=potencia(base,exponente);
+	printf("el resultado es: %d",resultado);
+	return 0;
+}
