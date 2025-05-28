@@ -1,0 +1,17 @@
+#include <stdio.h>//ingresa un numero y la funcion muestra el doble
+int doble(int a){
+	return a*2;
+}
+
+
+int main() {
+	int numero;
+	printf("ingrese un numero tal que la funcion muestre su doble:");
+	scanf("%d",&numero);
+	int resultado=doble(numero);
+	printf("el doble es %d",resultado);
+	
+	return 0;
+}
+
+
