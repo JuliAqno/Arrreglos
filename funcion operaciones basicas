@@ -1,0 +1,33 @@
+#include <stdio.h>
+int operaciones(int a,int b,int opcion){
+	switch(opcion){
+	case 1:
+		return a+b;
+		break;
+	case 2:
+		return a-b;
+		break;
+	case 3:
+		return a*b;
+	default:
+		return -9999;
+		
+	}
+}
+
+int main() {
+	int num1,num2,opcion;
+	printf("ingrese dos numeros a operar:");
+	scanf("%d %d",&num1,&num2);
+	printf("\neliga la operacion:\n1-suma\n2-resta\n3-multipliacion\nopcion: ");
+	scanf("%d",&opcion);
+	int resultado=operaciones(num1,num2,opcion);
+	
+	if (resultado == -9999) {
+		printf("\nError: Elija una opción entre 1 y 3.\n");
+	} else {
+		printf("\nEl resultado es: %d\n", resultado);
+	}
+	
+	return 0;
+}
