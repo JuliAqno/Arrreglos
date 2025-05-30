@@ -1,0 +1,33 @@
+#include <stdio.h>
+struct persona{
+	char nombre[30];
+	float altura;
+};
+
+int main() {
+	struct persona pers[3];
+	struct persona temp;
+	
+	for(int i=0;i<3;i++){
+		printf("ingrese el nombre:");
+		scanf("%s",&pers[i].nombre);
+		printf("ingrese la altura:");
+		scanf("%f",&pers[i].altura);
+		printf("\n");
+		
+	}
+	for( int i=0;i<3-1;i++){
+		for(int j=0;j<3-1;j++){
+			if(pers[j].altura>pers[j+1].altura){
+				temp=pers[j];
+				pers[j]=pers[j+1];
+				pers[j+1]=temp;
+			}
+		}
+		
+	}
+	printf("La persona más alta es: %s con %.2f metros\n", pers[2].nombre, pers[2].altura);
+	
+	return 0;
+}
+
