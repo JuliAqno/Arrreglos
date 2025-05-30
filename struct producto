@@ -1,0 +1,29 @@
+#include <stdio.h>
+struct producto{
+	char nombre[30];
+	int precio;
+	int cantidad;
+	
+};
+
+
+int main() {
+	struct producto prod[2];
+	
+	for(int i=0;i<2;i++){
+		printf("ingrese el nombre del producto: ");
+		scanf("%s",&prod[i].nombre);
+		printf("ingrese el precio del producto: ");
+		scanf("%d",&prod[i].precio);
+		printf("ingrese la cantidad: ");
+		scanf("%d",&prod[i].cantidad);
+		printf("\n");
+	}
+	for(int i=0;i<2;i++){
+		printf("producto: %s\tstock: %d",prod[i].nombre,prod[i].precio*prod[i].cantidad);
+		printf("\n");
+	}
+	
+	
+	return 0;
+}
