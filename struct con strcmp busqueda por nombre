@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+struct persona{
+	char nombre[30];
+	int dni;
+};
+
+int main() {
+	struct persona pers[3];
+	char buscar[30];
+	int encontrado=0;
+
+	
+	for(int i=0;i<3;i++){
+		printf("ingrese el nombre:");
+		scanf("%s",&pers[i].nombre);
+		printf("ingrese el DNI:");
+		scanf("%d",&pers[i].dni);
+		printf("\n");
+		
+	}
+	printf("\ningrese un nombre: ");
+	scanf("%s",&buscar);
+	for(int i=0;i<3;i++){
+		if(strcmp(buscar,pers[i].nombre)==0){
+			printf("\nel dni de la persona es %d",pers[i].dni);
+			encontrado=1;
+		}
+	}
+	if (!encontrado) {
+		printf("\nLa persona no existe\n");
+	}
+	
+	
+	return 0;
+}
+	
+	
