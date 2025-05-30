@@ -1,0 +1,45 @@
+#include <stdio.h>
+struct alumno{
+	char nombre[30];
+	float nota1,nota2,nota3;
+};
+float funcion(float a,float b,float c){
+	return (a+b+c)/3;
+}
+
+int main() {
+	struct alumno almno[5];
+	float temp;
+	float resultado[5];
+	for(int i=0;i<5;i++){
+		printf("ingrese el nombre del alumno:");
+		scanf("%s",&almno[i].nombre);
+		printf("ingrese la primer nota:");
+		scanf("%f",&almno[i].nota1);
+		printf("ingrese la segumda nota:");
+		scanf("%f",&almno[i].nota2);
+		printf("ingrese la tercer nota:");
+		scanf("%f",&almno[i].nota3);
+		resultado[i]=funcion(almno[i].nota1,almno[i].nota2,almno[i].nota3);
+		printf("el promedio del alumno es:%.2f",resultado[i]);
+		printf("\n");
+		
+	}
+	for( int i=0;i<5-1;i++){
+		for(int j=0;j<5-1;j++){
+			if(resultado[j]>resultado[j+1]){
+				temp=resultado[j];
+				resultado[j]=resultado[j+1];
+				resultado[j+1]=temp;
+				struct alumno tempAlumno = almno[j];
+				almno[j] = almno[j + 1];
+				almno[j + 1] = tempAlumno;
+			}
+		}
+		
+	}
+	printf("\nEl alumno con mejor promedio es: %s con %.2f \n", almno[4].nombre,resultado[4]);
+	
+	
+	return 0;
+}
